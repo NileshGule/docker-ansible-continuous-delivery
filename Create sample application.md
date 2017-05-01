@@ -12,21 +12,24 @@ Check Python is installed on Mac Machine
 >> If this fails try > sudo easy_install pip
 
 ### Install Django framework
-pip install django==1.9
+> pip install django==1.9
 
 If this fails, try with sudo
 > sudo easy_install django==1.9
 
 ### Initiate a todobackend project using django admin command
-django-admin startproject todobackend
+> django-admin startproject todobackend
 
-cd todobackend
+Child todobackend is the Django root folder
+
+> cd todobackend
 
 ### create a src folder & move manage.py + todobackend directory to src
+#### Restructure the layout for CD
 
-mkdir src
-mv manage.py src
-mv todobackend/ src
+> mkdir src
+> mv manage.py src
+> mv todobackend/ src
 
 ## Virtual environment creation
 Install Virtualenv package
@@ -44,17 +47,6 @@ Create viirtual environment using virtualenv command
 ### Install Django into virtual environment
 > pip install django==1.9
 
-### Create todobackend project using django admin utility
-> django-admin startproject todobackend
-
-Child todobackend is the Django root folder
-
-#### Resturucture the layout for CD
->cd todobackend
-> mkdir src
-> mv manage.py src
-> mv todobackend/ src
-
 ### Install Djangorest framework
 > pip install djangorestframework==3.3
 
@@ -64,7 +56,12 @@ Child todobackend is the Django root folder
 cd src
 
 ### Start the application using startapp command
->python manage.py startapp todo
+> python manage.py startapp todo
+
+
+
+#### To stop the virtual environment
+> deactivate
 
 #### Create models
 
