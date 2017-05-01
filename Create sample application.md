@@ -4,7 +4,7 @@
 mkdir cd-docker-ansible
 
 ### Create Todobackend Web service
-#### Initial Setup
+#### 1. Initial Setup
 Check Python is installed on Mac Machine
 >python --version
 
@@ -63,9 +63,18 @@ cd src
 #### To stop the virtual environment
 > deactivate
 
-#### Create models
+#### 2. Create models
+### Create TodoItem as a model with 4 properties title, completed, url and order
 
-#### Create serializers
+### Create schema for TodoItem using built in ORM, todo1 is the application name in below command
+> python manage.py makemigrations todo1
+
+### Apply migrations
+> python manage.py migrate
+
+### By default Django stores the data in the local SQLite databse
+
+#### 3. Create serializers
 
 #### Create Views
 
