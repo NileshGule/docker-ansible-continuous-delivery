@@ -1,10 +1,10 @@
 from django.conf.urls import url, include
-from todo import views
-from rest_framework.routers import DefaultRoute
+from todo1 import views
+from rest_framework.routers import DefaultRouter
 
 # Create a route and register our viewsets with it
-router = DefaultRoute(trailing_slash=False)
-route.register(r'todos', view.todoItemViewSet)
+router = DefaultRouter(trailing_slash=False)
+router.register(r'todos', views.TodoItemViewSet)
 
 # The API URLs are now determined automatically by the router
 urlpatterns = [

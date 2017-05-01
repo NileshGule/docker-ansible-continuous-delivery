@@ -9,7 +9,7 @@ from rest_framework.response import Response
 # Create your views here.
 class TodoItemViewSet(viewsets.ModelViewSet):
     queryset = TodoItem.objects.all()
-    serializers.class  = TodoItemSerializer
+    serializer_class  = TodoItemSerializer
 
     def perform_create(self, serializer):
         # Save instance to get the primary key and then update the url
