@@ -3,10 +3,19 @@
 ####Create course root folder
 mkdir cd-docker-ansible
 
-##Create todobackend web service application
+### Create Todobackend Web service
+#### Initial Setup
+Check Python is installed on Mac Machine
+>python --version
+
+>Update version of pip easy_install pip
+>> If this fails try > sudo easy_install pip
 
 ### Install Django framework
 pip install django==1.9
+
+If this fails, try with sudo
+> sudo easy_install django==1.9
 
 ### Initiate a todobackend project using django admin command
 django-admin startproject todobackend
@@ -18,6 +27,23 @@ cd todobackend
 mkdir src
 mv manage.py src
 mv todobackend/ src
+
+#### Create models
+
+#### Create serializers
+
+#### Create Views
+
+#### Configure routing
+
+#### Test drive the application
+
+
+
+
+
+
+
 
 #commit the changes to reposiroty
 git add -A
