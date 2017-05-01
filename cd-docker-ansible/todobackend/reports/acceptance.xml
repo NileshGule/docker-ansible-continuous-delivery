@@ -1,0 +1,19 @@
+<testsuites name="Mocha Tests">
+<testsuite name="Cross Origin Requests" tests="2" failures="0" skipped="0" timestamp="Mon, 11 Apr 2016 10:07:14 GMT" time="0.177">
+<testcase classname="Cross Origin Requests" name="should return the correct CORS headers" time="0.156"/>
+<testcase classname="Cross Origin Requests" name="should allow all origins" time="0.002"/>
+</testsuite>
+<testsuite name="Create Todo Item" tests="3" failures="0" skipped="0" timestamp="Mon, 11 Apr 2016 10:07:15 GMT" time="0.048">
+<testcase classname="Create Todo Item" name="should return a 201 CREATED response" time="0.026"/>
+<testcase classname="Create Todo Item" name="should receive a location hyperlink" time="0.001"/>
+<testcase classname="Create Todo Item" name="should create the item" time="0.008"/>
+</testsuite>
+<testsuite name="Update Todo Item" tests="2" failures="0" skipped="0" timestamp="Mon, 11 Apr 2016 10:07:15 GMT" time="0.04">
+<testcase classname="Update Todo Item" name="should have completed set to true after PUT update" time="0.009"/>
+<testcase classname="Update Todo Item" name="should have completed set to true after PATCH update" time="0.008"/>
+</testsuite>
+<testsuite name="Delete Todo Item" tests="2" failures="0" skipped="0" timestamp="Mon, 11 Apr 2016 10:07:15 GMT" time="0.039">
+<testcase classname="Delete Todo Item" name="should return a 204 NO CONTENT response" time="0.008"/>
+<testcase classname="Delete Todo Item" name="should delete the item" time="0.012"/>
+</testsuite>
+</testsuites>
