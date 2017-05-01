@@ -1,5 +1,8 @@
 #Create sample application module
 
+####Create course root folder
+mkdir cd-docker-ansible
+
 ##Create todobackend web service application
 
 ### Install Django framework
