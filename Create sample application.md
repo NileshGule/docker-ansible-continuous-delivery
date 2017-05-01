@@ -75,6 +75,7 @@ cd src
 ### By default Django stores the data in the local SQLite databse
 
 #### 3. Create serializers
+###
 
 #### Create Views
 
