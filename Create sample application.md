@@ -78,11 +78,15 @@ cd src
 ###
 
 #### Create Views
+Update views.py file with required settings & functions
 
 #### Configure routing
+Update urls.py file with required settings and functions
 
 #### Test drive the application
+> python manage.py runserver
 
+If everything is fine, then the application should be accessible using Django rest API on http://localhost:8000 url
 
 
 
