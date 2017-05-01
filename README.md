@@ -26,8 +26,8 @@ Check the version of pip package manager
 pip install awscli
 
 ### 3 - Install other tools
-Git
-Sublime Text 2 with Material theame
-Tree
+1. Git
+2. Sublime Text 2 with Material theame
+3. Tree
 
 ### 4
