@@ -20,7 +20,41 @@ Create test.py in settings folder
 override the MySQL database default settings
 
 ### Install MYSQL
-> brew install homebrew/versions/mysql56
+> 'brew install homebrew/versions/mysql56'
+The command to install specific version of MySQL 5.6 did not work.
+
+The source for latest version was compiled using
+> `brew install mysql --build-from-source`
+
+Verify that the installation was successful by running the command
+> `mysql.server start`
+
+Configure password
+> 'mysql_secure_configuration'
+
+after setting up different options, login to server
+> 'mysql -u root -p'
+
+Once the root password is entered, mysql prompt should appear
+
+### Create todobackend database
+> `CREATE DATABASE todobackend`
+
+### Grant required previllages
+> `GRANT ALL PRIVILEGES ON *.* TO 'todo1'@'localhost' identified by  'password'`
+
+### Exit mysql prompt
+> `quit`
+
+### Install Mysql-python package
+> `sudo pip install mysql-python`
+
+### Run tests using new settings
+Option 1 - Set DJango settings module environment variable
+> `export DJANGO_SETTINGS_MODULE=todonackend.settings.test`
+
+Option 2 - using settings flag for manage.py command
+> `python manage.py test --settings=todobackend.settings.test`
 
 ## Configure integration tests
 

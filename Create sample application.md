@@ -28,7 +28,9 @@ Child todobackend is the Django root folder
 #### Restructure the layout for CD
 
 > `mkdir src`
+
 > `mv manage.py src`
+
 > `mv todobackend/ src`
 
 ## Virtual environment creation
