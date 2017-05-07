@@ -1,15 +1,15 @@
 #Create sample application module
 
 ####Create course root folder
-`mkdir cd-docker-ansible`
+> `mkdir cd-docker-ansible`
 
 ### Create Todobackend Web service
 #### 1. Initial Setup
 Check Python is installed on Mac Machine
->python --version
+> `python --version`
 
->Update version of pip easy_install pip
->> If this fails try > sudo easy_install pip
+>Update version of pip `easy_install pip`
+>> If this fails try > `sudo easy_install pip`
 
 ### Install Django framework
 > pip install django==1.9
