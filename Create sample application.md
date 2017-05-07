@@ -1,7 +1,7 @@
 #Create sample application module
 
 ####Create course root folder
-mkdir cd-docker-ansible
+`mkdir cd-docker-ansible`
 
 ### Create Todobackend Web service
 #### 1. Initial Setup
