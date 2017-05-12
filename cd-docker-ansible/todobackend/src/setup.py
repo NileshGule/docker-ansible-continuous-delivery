@@ -15,7 +15,7 @@ setup (
         "MySQL-python==1.2.5",
         "packaging==16.8",
         "pyparsing==2.2.0"
-    ]
+    ],
     extras_require = {
         "test": [
         "colorama==0.3.9",

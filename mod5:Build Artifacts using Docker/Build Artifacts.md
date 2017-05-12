@@ -14,3 +14,26 @@ Modify the dockerfile to add volume for the build folder
 Modify docker compose file to add build volume to the cache service
 
 ## 4 Build and publish Python wheels
+Clean the environment
+> `docker-compose kill`
+
+> `docker-compose rm -f`
+
+> `docker-compose up agent`
+
+> `docker-compose up test`
+
+Clean the environment again as the dev_test image is not rebuilt
+> `docker-compose kill`
+
+> `docker-compose rm -f`
+
+Restart the test stage with build command which forces the docker-compose to rebuild the image
+> `docker-compose build`
+
+> `docker-compose up agent`
+
+> `docker-compose up test`
+
+Build application artifacts
+> `docker-compose up builder`

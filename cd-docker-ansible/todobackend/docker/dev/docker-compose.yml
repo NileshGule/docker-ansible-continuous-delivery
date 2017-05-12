@@ -16,12 +16,12 @@ builder:
   build: ../../
   dockerfile: docker/dev/Dockerfile
   volumes:
-    - ../../target:wheelhouse
+    - ../../target:/wheelhouse
   volumes_from:
     - cache
   entrypoint: "entrypoint.sh"
   command: ["pip", "wheel", "--no-index", "-f /build", "."]
-  
+
 agent:
   image: nileshgule/ansible
   volumes:
@@ -30,7 +30,7 @@ agent:
     - db
   environment:
     PROBE_HOST: "db"
-    PROBE_HOST: "3306"
+    PROBE_PORT: "3306"
 db:
   image: mysql:5.6
   hostname: db
