@@ -44,3 +44,9 @@ Verify that the probe is working fine
 
 Run docker compose test which runs all the tests successfully
 >`docker-compose up test`
+
+Run docker compose builder to build wheels packages
+> `docker-compose up builder`
+
+Navigate to `todobackend` directory and check the contents of target folder
+> `ls -l target/*`

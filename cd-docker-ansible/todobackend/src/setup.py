@@ -14,7 +14,8 @@ setup (
                                 "djangorestframework==3.3.0",
                                 "MySQL-python==1.2.5",
                                 "packaging==16.8",
-                                "pyparsing==2.2.0"
+                                "pyparsing==2.2.0",
+                                "uwsgi>=2.0"
                             ],
     extras_require          = {
                                 "test": [
