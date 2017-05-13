@@ -22,7 +22,7 @@ Add details to Dockerfile
 #### 4 - Establish virtual environment
 
 #### 5 - Building the base image
-> `docker build nileshgule/todobacken-base .`
+> `docker build -t nileshgule/todobackend-base .`
 
 Verify the image
 > `docker images`
