@@ -19,10 +19,12 @@ app:
     - "--master"
     - "--die-on-term"
 
-ngnix:
-  image: ngnix
+nginx:
+  image: nginx
+  links:
+    - app
   volumes:
-    - ./todobackend.conf:/etc/ngnix/conf.d/todobackend.conf
+    - ./todobackend.conf:/etc/nginx/conf.d/todobackend.conf
   ports:
     - "8000:8000"
   volumes_from:
