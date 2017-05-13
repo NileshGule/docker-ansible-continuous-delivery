@@ -1,0 +1,32 @@
+app:
+  build: ../..
+  dockerfile: docker/release/Dockerfile
+  links:
+    - db
+  volumes_from:
+    - webroot
+  environment:
+    DJANGO_SETTINGS_MODULE: todobackend.settings.release
+    MYSQL_HOST: db
+    MYSQL_USER: root
+    MYSQL_PASSWORD: password
+    TEST_OUTPUT_DIR: /reports
+db:
+  image: mysql5.6
+  expose:
+    - "3306"
+  environment:
+    MYSQL_DATABASE: todobackend
+    MYSQL_USER: todo
+    MYSQL_PASSWORD: password
+    MYSQL_ROOT_PASSWORD: password
+
+agent:
+  image: nileshgule/ansible
+  volumes:
+    - ../../ansible/probe.yml:ansible/site.yml
+  links:
+    - db
+  environment:
+    PROBE_HOST: "db"
+    PROBE_PORT: "3306"

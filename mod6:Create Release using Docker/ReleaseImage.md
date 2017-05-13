@@ -25,9 +25,17 @@ Run docker compose build to rebuild the images
 
 > `docker-compose up builder`
 
+---
 ## Create release image
-## Describe release environment
+Create `Dockerfile` under the `docker/release` folder
 
+Base the image on nileshgule/todobackend-base:latest version
+
+Copy artifacts from /wheelhouse directory
+
+---
+## Describe release environment
+Create the environment in a docker compose file
 ---
 # Bootstrap release environment
 
