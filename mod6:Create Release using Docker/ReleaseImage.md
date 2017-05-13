@@ -56,3 +56,14 @@ rebuild base image and the release environment
 # Run acceptance test
 
 ### Bootstrap the application
+add app service as the link
+
+> `docker-compose up nginx`
+
+Copy the static content by running the command to collect static files
+> `docker-compose run --rm app manage.py collectstatic --noinput`
+
+> `docker-compose up nginx`
+
+Run the table migrations
+>`docker-compose run --rm app manage.py migrate --noinput`
