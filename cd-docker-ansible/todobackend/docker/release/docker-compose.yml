@@ -11,8 +11,32 @@ app:
     MYSQL_USER: root
     MYSQL_PASSWORD: password
     TEST_OUTPUT_DIR: /reports
+  command:
+    - uwsgi
+    - "--socket /var/www/todobackend/todobackend.sock"
+    - "--chmod-socket=666"
+    - "--module todobackend.wsgi"
+    - "--master"
+    - "--die-on-term"
+
+ngnix:
+  image: ngnix
+  volumes:
+    - ./todobackend.conf:/etc/ngnix/conf.d/todobackend.conf
+  ports:
+    - "8000:8000"
+  volumes_from:
+    - webroot
+
+webroot:
+  build: ../../
+  dockerfile: docker/release/Dockerfile
+  volumes:
+    - /var/www/todobackend
+  entrypoint: "true"
+
 db:
-  image: mysql5.6
+  image: mysql:5.6
   expose:
     - "3306"
   environment:
@@ -24,7 +48,7 @@ db:
 agent:
   image: nileshgule/ansible
   volumes:
-    - ../../ansible/probe.yml:ansible/site.yml
+    - ../../ansible/probe.yml:/ansible/site.yml
   links:
     - db
   environment:

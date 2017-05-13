@@ -5,6 +5,6 @@ MAINTAINER Nilesh Gule <vn_nilesh@yahoo.com>
 COPY target /wheelhouse
 
 # Install the application
-RUN ./appenv/bin/activate && \
+RUN . /appenv/bin/activate && \
   pip install --no-index -f /wheelhouse todobackend && \
   rm -rf /wheelhouse

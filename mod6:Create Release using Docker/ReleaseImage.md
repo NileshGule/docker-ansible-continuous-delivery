@@ -36,8 +36,23 @@ Copy artifacts from /wheelhouse directory
 ---
 ## Describe release environment
 Create the environment in a docker compose file
+
+Add ngnix config file named `todobackend.conf`
+
 ---
 # Bootstrap release environment
+Run the docker compose
+> `docker-compose build`
+
+> `docker-compose up agent`
+
+> `docker-compose up app`
+
+Add libpython2.7 depepndency to the base image
+
+rebuild base image and the release environment
 
 ---
 # Run acceptance test
+
+### Bootstrap the application
