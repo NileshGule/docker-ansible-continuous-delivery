@@ -1,5 +1,5 @@
 from base import *
-from os
+import os
 
 # Disable debug
 if os.environ.get('DEBUG'):
