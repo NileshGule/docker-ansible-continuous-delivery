@@ -80,5 +80,19 @@ Build the docker image
 Create a test service in the docker-compose file for release environment
 
 Run acceptance test
+clean up the release environment
+> `docker-compose kill`
+
+> `docker-compose rm -f`
+
+> `docker-compose build`
+
+> `docker-compose up agent`
+
+> `docker-compose run --rm app manage.py collectstatic --noinput`
+
+>`docker-compose run --rm app manage.py migrate --noinput`
+
+> `docker-compose up test`
 
 Publish the release image
