@@ -1,0 +1,4 @@
+node_modules
+.*
+
+# only the package.json & test folder will be copied to the image

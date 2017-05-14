@@ -67,3 +67,13 @@ Copy the static content by running the command to collect static files
 
 Run the table migrations
 >`docker-compose run --rm app manage.py migrate --noinput`
+
+### Run acceptance tests
+Create test service
+Create Dockerfile in the todobackend-specs
+
+Create .dockerignore file to exclude `node_modules` folder from being copied to the image
+
+Run acceptance test
+
+Publish the release image
