@@ -74,6 +74,11 @@ Create Dockerfile in the todobackend-specs
 
 Create .dockerignore file to exclude `node_modules` folder from being copied to the image
 
+Build the docker image
+> `docker build -t nileshgule/todobackend-specs .`
+
+Create a test service in the docker-compose file for release environment
+
 Run acceptance test
 
 Publish the release image
