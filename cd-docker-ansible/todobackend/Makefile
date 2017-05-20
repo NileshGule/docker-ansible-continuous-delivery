@@ -1,7 +1,7 @@
 #Project variables
 PROJECT_NAME ?= todobackend
 ORG_NAME ?= nileshgule
-REPO_NAME ?= todobackend1
+REPO_NAME ?= todobackend
 
 # Filenames
 DEV_COMPOSE_FILE := docker/dev/docker-compose.yml

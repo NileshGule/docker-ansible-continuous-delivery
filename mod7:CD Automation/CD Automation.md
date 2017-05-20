@@ -18,5 +18,19 @@ Similarly add the tasks for build & releases stages to the make file
 # Workflow infrastructure
 
 ## Github
+Create 5 repositories in github
+1 - docker-ansible
+2 - todobackend
+3 - todo-backend-base
+4 - todobackend-client
+5 - todobackend-specs
 
 ## Docker Hub
+Create repository for storing docker images
+todobackend
+
+login to dockerhub from commandline
+> `docker login`
+
+push the image to dockerhub
+> `docker push nileshgule/todobackend-client`
