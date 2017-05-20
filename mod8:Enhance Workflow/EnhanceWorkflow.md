@@ -1,6 +1,7 @@
 # Enhance the workflow
 
 ## Dangling images & volumes
+---
 Update makefile to remove dangling images during the clean target execution
 
 Run the clean command
@@ -32,15 +33,22 @@ Run the make clean command
 > `make clean`
 
 ## Improve user feedback
+---
 
 ## Make the workflow self contained
+---
 
 ## Producing test reports
+---
 
 ## Handle errors
+---
 
 ## Ensure consistency
+---
 
 ## Tag & Publish
+---
 
 ## Convert files to use Docker Compose V2 Specification
+---
