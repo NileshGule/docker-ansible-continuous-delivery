@@ -65,6 +65,16 @@ Modify the docker-compose in todobackend dev
 
 ## Producing test reports
 ---
+Copy the test results from containers back to the docker client
+run the workflow
+> `make test`
+
+> `make build`
+
+> `make release`
+
+As part of housekeeping, update gitignore file to exclude reports & target folder
+Ignore the reports folder in the dockerignore file
 
 ## Handle errors
 ---
