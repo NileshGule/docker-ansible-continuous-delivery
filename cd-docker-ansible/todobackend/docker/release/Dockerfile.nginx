@@ -1,0 +1,5 @@
+FROM nginx
+MAINTAINER Nilesh Gule <nileshgule@gmail.com>
+
+# copy configuration file
+COPY todobackend.conf /etc/nginx/conf.d/todobackend.conf
