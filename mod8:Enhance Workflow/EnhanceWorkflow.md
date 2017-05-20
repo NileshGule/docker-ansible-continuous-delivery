@@ -96,6 +96,18 @@ Run the workflow again for test, build & release stages
 
 ## Ensure consistency
 ---
+Modify the test stage
+- Add docker compose pull command at the start of the test stage
+- Ensure that the test & cache services are built using the latest image of dev image
+- Build the test image with pull flag
+- Build the cache image without pull flag
+
+Modify the release stage
+- Add docker compose pull command to pull the test image
+- Build the App & Webroot services without the pull flag
+- build the nginx image with the pull flag`
+
+Test out the workflow (test, build, release, clean)
 
 ## Tag & Publish
 ---
