@@ -78,6 +78,21 @@ Ignore the reports folder in the dockerignore file
 
 ## Handle errors
 ---
+Use the docker rm approach to remove containers where files are not required to be passed back
+
+Define ISPECT variable to extract the exit code from the docker container
+Define CHECK variable to check the value of exit code
+Implement a make rule that implements the CHECK variable
+
+Modify the test & build workflow
+ - Update test task to do a check after copying the test results
+ - Update build task to do a check after the artifacts are created
+
+Modify the release workflow
+ - Change the docker compose up agent command to docker compose rm command
+ - Check the exit code after copying the test results
+
+Run the workflow again for test, build & release stages
 
 ## Ensure consistency
 ---
