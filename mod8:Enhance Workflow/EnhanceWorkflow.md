@@ -105,12 +105,27 @@ Modify the test stage
 Modify the release stage
 - Add docker compose pull command to pull the test image
 - Build the App & Webroot services without the pull flag
-- build the nginx image with the pull flag`
+- build the nginx image with the pull flag
 
 Test out the workflow (test, build, release, clean)
 
 ## Tag & Publish
 ---
+Add tag target to the Makefile
+Configure a make function called foreach
+Define DOCKER_REGISRTY & TAG_ARGS variables
+Get ImageId of container using approach similar to command substitution
+Extract the container id using command substitution
+
+Run the workflow (test, build, release)
+Tag the image using command
+> `make tag 0.1 latest $(git rev-parse --short HEAD)`
+
+Verify tagging has worked successfully by running the docker images command
+> `docker images`
+
+### Implement the buildtag functionality
+Add buildtag target to makefile
 
 ## Convert files to use Docker Compose V2 Specification
 ---
