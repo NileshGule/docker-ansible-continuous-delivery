@@ -136,6 +136,19 @@ Tag the images using buildtag command
 
 ### Publish the release image
 Add login logout and publish tasks to makefile
+Extract image tags using command substitution into a variable named REPO_EXPR
+Test the publish by first setting the environment variables for DOCKER_USER, DOCKER_EMAIL and DOCKER_PASSWORD
+> `export DOCKER_USER=nileshgule`
+
+> `export DOCKER_EMAIL=vn_nilesh@yahoo.com`
+
+> `export password=<YOUR PASSWORD>`
+
+Run the login command
+> `make login`
+
+Publish the images
+> `make publish`
 
 ## Convert files to use Docker Compose V2 Specification
 ---

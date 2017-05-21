@@ -117,7 +117,7 @@ logout:
 	${INFO} "Logged out of Docker registry $$DOCKER_REGISTRY"
 
 publish:
-	${INFO} "Publishing release image $(IMAGE_ID) to $(DOCKER_REGISRTY)/$(ORG_NAME/$(REPO_NAME))..."
+	${INFO} "Publishing release image $(IMAGE_ID) to $(DOCKER_REGISTRY)/$(ORG_NAME/$(REPO_NAME))..."
 	@ $(foreach tag, $(shell echo $(REPO_EXPR)), docker push $(tag);)
 	${INFO} "Publish complete"
 
@@ -137,6 +137,16 @@ APP_CONTAINER_ID := $$(docker-compose -p $(REL_PROJECT) -f $(REL_COMPOSE_FILE) p
 
 # Get image id of the service
 IMAGE_ID := $$(docker inspect -f '{{ .Image }}' $(APP_CONTAINER_ID))
+
+# Repository filter
+ifeq ($(DOCKER_REGISTRY), docker.io)
+	REPO_FILTER := $(ORG_NAME)/$(REPO_NAME)[^[:space:]|\$$]*
+else
+	REPO_FILTER := $(DOCKER_REGISTRY)/$(ORG_NAME)/$(REPO_NAME)[^[:space:]|\$$]*
+endif
+
+# Introspect repository tags
+REPO_EXPR = $$(docker inspect -f '{{range .RepoTags}}{{.}} {{end}}' $(IMAGE_ID) | grep -oh "$(REPO_FILTER)" | xargs)
 
 # Extract build tag arguments
 ifeq (buildtag,$(firstword $(MAKECMDGOALS)))
