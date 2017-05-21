@@ -152,3 +152,31 @@ Publish the images
 
 ## Convert files to use Docker Compose V2 Specification
 ---
+Add the docker compose V2 file to dev & release environments
+Explicitly add the version 2 at the beginning of the file
+Modify the dynamically built services (test, builder & cache) to provide build context
+Define top level volumes
+- Define build as local volume
+- Define cache as external volume
+
+Use volumes in services
+- Use build & cache volumes in test service
+- Use cache volume in builder service
+- Remove cache service as it is provided by Docker
+
+Modify the makefile to reflect the changes
+- Refer the v2 files for dev & release
+- Add a new step to test stage to create cache volume
+- Remove reference to the cache volume container service
+
+### Build version 2 of the docker compose specification for release stage
+- Add explicit version
+- Modify services to use build context syntax
+- Add volume for webroot as local volume
+- Update app and nginx services to refer to the new webroot volume
+
+### Reconfigure the make file to use release config specification
+- Remove the action to build webroot container service
+- Use the new docker compose down command which cleans up all resources
+
+Test the workflow (test, build, release)
