@@ -111,6 +111,8 @@ Test out the workflow (test, build, release, clean)
 
 ## Tag & Publish
 ---
+### Implement the tag functionality
+
 Add tag target to the Makefile
 Configure a make function called foreach
 Define DOCKER_REGISRTY & TAG_ARGS variables
@@ -131,6 +133,9 @@ Extract BUILD_TAGS similar to the TAGS operation performed earlier
 
 Tag the images using buildtag command
 > `make buildtag 0.1 $(git rev-parse --abbrev-ref HEAD)`
+
+### Publish the release image
+Add login logout and publish tasks to makefile
 
 ## Convert files to use Docker Compose V2 Specification
 ---

@@ -33,7 +33,11 @@ then exit $(INSPECT); fi' VALUE
 # Use these settings to specify the custom Docker registry
 DOCKER_REGISTRY ?= docker.io
 
-.PHONY: test build release clean remove-dangling tag buildtag
+# WARNING : Set DOCKER_REGISTRY_AUTH to empty for Docker Hub
+# Set DOCKER_REGISTRY_AUTH to auth endpoint for private Docker registry
+DOCKER_REGISTRY_AUTH ?=
+
+.PHONY: test build release clean remove-dangling tag buildtag login logout publish
 
 test:
 	${INFO} "Pulling latest images..."
@@ -101,6 +105,22 @@ buildtag:
 	${INFO} "Tagging release image with suffix $(BUILD_TAG) and build tags $(BUILD_TAG)..."
 	@ $(foreach tag, $(BUILDTAG_ARGS), docker tag $(IMAGE_ID) $(DOCKER_REGISTRY)/$(ORG_NAME)/$(REPO_NAME):$(tag).$(BUILD_TAG);)
 	${INFO} "Tagging completed"
+
+login:
+	${INFO} "Logging in to Docker registry $$DOCKER_REGISTRY..."
+	@ docker login -u $$DOCKER_USER -p $$DOCKER_PASSWORD -e $$DOCKER_EMAIL $(DOCKER_REGISTRY_AUTH)
+	${INFO} "Logged in to Docker registry $$DOCKER_REGISTRY"
+
+logout:
+	${INFO} "Logging out of Docker registry $$DOCKER_REGISTRY..."
+	@ docker logout
+	${INFO} "Logged out of Docker registry $$DOCKER_REGISTRY"
+
+publish:
+	${INFO} "Publishing release image $(IMAGE_ID) to $(DOCKER_REGISRTY)/$(ORG_NAME/$(REPO_NAME))..."
+	@ $(foreach tag, $(shell echo $(REPO_EXPR)), docker push $(tag);)
+	${INFO} "Publish complete"
+
 
 # Cosmetics
 YELLOW := "\e[1;33m"
