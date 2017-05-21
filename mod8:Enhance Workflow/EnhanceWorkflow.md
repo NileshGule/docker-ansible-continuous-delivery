@@ -126,6 +126,11 @@ Verify tagging has worked successfully by running the docker images command
 
 ### Implement the buildtag functionality
 Add buildtag target to makefile
+Define BUILD_TAGS variable
+Extract BUILD_TAGS similar to the TAGS operation performed earlier
+
+Tag the images using buildtag command
+> `make buildtag 0.1 $(git rev-parse --abbrev-ref HEAD)`
 
 ## Convert files to use Docker Compose V2 Specification
 ---
