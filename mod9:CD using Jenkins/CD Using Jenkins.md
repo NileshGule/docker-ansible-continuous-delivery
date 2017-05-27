@@ -70,6 +70,7 @@ Configure the pipeline with following Groovy script
 #### Test the Workflow
 After successful publish, check the dockerhub image for todobackend is updated
 #### Create self defined workflow
+Create Jenkinsfile to make the workflow self describing
 #### Test failures
 
 ## Jenkins in a container
