@@ -105,4 +105,6 @@ Give rights only to the owner to modify the key file
 ###Reveiew the VPC infrastructure
 
 ### Create CloudFormation template
+Create stack.json file in the docker-jenkins folder
+
 ## Github and Docker Hub integration
