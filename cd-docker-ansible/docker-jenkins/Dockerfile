@@ -1,4 +1,4 @@
-FROM jenkins:1.642.1
+FROM jenkins
 MAINTAINER Nilesh Gule <vn_nilesh@yahoo.com>
 
 # Suppress apt installation warnings

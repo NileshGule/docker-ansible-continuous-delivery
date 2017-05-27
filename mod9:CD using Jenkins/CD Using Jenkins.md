@@ -25,7 +25,50 @@ After the Jenkins image is built successfully browse the localhost to Verify
 In this case the local address was 192.168.99.100:8080
 
 #### Configure the workflow
+Create a new job
+Note: Not all the plugins were installed successfully at this stage. Manually installed the plugins using Jenkins Manage Plugins options
+May2017 - Jenkins Nilesh
+
+Configure the pipeline with following Groovy script
+`node {
+    git 'https://github.com/nileshgule/todobackend.git'
+
+  try {
+      stage 'Run unit/integration tests'
+      sh 'make test'
+
+      stage 'Build application artifacts'
+      sh 'make build'
+
+      stage 'Create release environemnt and run acceptance tests'
+      sh 'make release'
+
+      stage 'Tag and publish the release image'
+      sh "make tag latest \$(git rev-parse --short HEAD) \$(git tag --points-at HEAD)"
+      sh "make buildtag master \$(git tag --points-at HEAD)"
+      withEnv(["DOCKER_USER=${DOCKER_USER}",
+               "DOCKER_PASSWORD=${DOCKER_PASSWORD}",
+               "DOCKER_EMAIL=${DOCKER_EMAIL}"]) {
+                   sh "make login"
+      }
+
+      sh 'make publish'
+
+
+
+  }
+  finally {
+      stage 'collect test reports'
+      step([$class: 'JUnitResultArchiver', testResults: '**/reports/*.xml'])
+
+      stage 'Clean up'
+      sh 'make clean'
+      sh 'make logout'
+  }
+}`
+
 #### Test the Workflow
+After successful publish, check the dockerhub image for todobackend is updated
 #### Create self defined workflow
 #### Test failures
 
