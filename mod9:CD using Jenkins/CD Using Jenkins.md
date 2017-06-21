@@ -106,5 +106,6 @@ Give rights only to the owner to modify the key file
 
 ### Create CloudFormation template
 Create stack.json file in the docker-jenkins folder
+Get the latest AMI from http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI_launch_latest.html
 
 ## Github and Docker Hub integration
