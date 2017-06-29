@@ -108,4 +108,15 @@ Give rights only to the owner to modify the key file
 Create stack.json file in the docker-jenkins folder
 Get the latest AMI from http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI_launch_latest.html
 
+login to the Jenkins server using `ssh -i "admin.pem" ec2-user@ec2-54-255-246-56.ap-southeast-1.compute.amazonaws.com`
+
+Get the initial admin passowrd for Jenkins using command
+`sudo cat /ecs/jenkins_home/secrets/initialAdminPassword`
+
+Create Jenkins admin user with following credentials
+Username : Admin
+Passowrd: jenkinsAdmin
+Fullname : Nilesh
+Email : vn_nilesh@yahoo.com
+
 ## Github and Docker Hub integration

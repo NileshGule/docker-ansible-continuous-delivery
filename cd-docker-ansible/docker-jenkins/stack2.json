@@ -104,7 +104,7 @@
       }
     },
     "ElasticLoadBalancer": {
-      "Type" : "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Type" : "AWS::ElasticLoadBalancing::LoadBalancer",
       "Properties": {
         "CrossZone": "false",
         "SecurityGroups" : [ { "Ref": "ElbSecurityGroup" } ],
@@ -115,7 +115,7 @@
             "Protocol" : "http"
           }
         ],
-        "Instance": [ { "Ref": "EC2Instance" } ],
+        "Instances": [ { "Ref": "EC2Instance" } ],
         "Subnets" : [ { "Ref": "SubnetId" } ]
       }
     },
@@ -167,11 +167,21 @@
   "Outputs": {
     "ElbDomainName": {
       "Description": "Public DNS name of Elastic Load Balancer",
-      "Value": { "Fn::GetAtt": [ "ElasticLoadBalancer", "DNSName" ]}
+      "Value": {
+        "Fn::GetAtt": [
+          "ElasticLoadBalancer",
+          "DNSName"
+        ]
+      }
     },
     "EC2InstanceDomainName": {
       "Description": "Public DNS name of EC2 Instance",
-      "Value": { "Fn::GetAtt": [ "EC2Instance", "PublicDnsName" ] }
+      "Value": {
+        "Fn::GetAtt": [
+          "EC2Instance",
+          "PublicDnsName"
+        ]
+      }
     }
   }
 }
