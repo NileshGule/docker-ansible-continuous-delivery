@@ -114,9 +114,13 @@ Get the initial admin passowrd for Jenkins using command
 `sudo cat /ecs/jenkins_home/secrets/initialAdminPassword`
 
 Create Jenkins admin user with following credentials
-Username : Admin
+Username : admin
 Passowrd: jenkinsAdmin
 Fullname : Nilesh
 Email : vn_nilesh@yahoo.com
 
 ## Github and Docker Hub integration
+Add webhook configurations to Github via Jenkins settings
+Generate Personal Access Token in GitHub to allow Jenkins users to authorize
+Add Webhook configurations to Dockerhub
+Configure Dockerhub repository using Jenkins plugin
